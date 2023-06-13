@@ -45,7 +45,7 @@ export const styles = StyleSheet.create({
         // display: 'flex',
         width: '45%',
         height: width * 0.45,
-        borderColor: '#5EB5F9',
+        borderColor: colors.gray,
         backgroundColor: '#BBF3F5',
         borderStyle: 'solid',
         borderWidth: 1,

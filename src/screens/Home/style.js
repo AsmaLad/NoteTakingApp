@@ -14,12 +14,14 @@ export const styles = StyleSheet.create({
     // flexDirection: "row",
     // flexWrap: "wrap",
     justifyContent: "center",
-    alignItems: "center",
-    alignContent: "center",
+    // alignItems: "center",
+    // alignContent: "center",
+    width:width
   },
   bodyContainer: {
     flex: 0.9,
-    // flexDirection: "row",
+    // width:"10%" ,
+    flexDirection: "row",
     // flexWrap: "wrap",
   },
 });

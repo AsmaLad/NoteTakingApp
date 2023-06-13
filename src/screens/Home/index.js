@@ -41,7 +41,7 @@ export const Home = () => {
           <Note key={note.id} note={note} navigation={navigation} />
         ))}
       </View>
-      <Bottom navigate={toggleDarkMode}/>
+      <Bottom navigate={toggleDarkMode} dark={!isDarkMode}/>
     </View>
   );
 };

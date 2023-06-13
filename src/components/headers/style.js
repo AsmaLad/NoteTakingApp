@@ -19,12 +19,10 @@ export const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: "bold", //
     marginLeft: 10,
-    color: colors.title,
   },
   hint: {
     fontSize: 14,
     marginLeft: 10,
-    color: colors.note,
   },
   ProfileIMG: {
     width: 50,

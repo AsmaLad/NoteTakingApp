@@ -21,7 +21,7 @@ export const styles = StyleSheet.create({
   bodyContainer: {
     flex: 0.9,
     // width:"10%" ,
-    flexDirection: "row",
+    // flexDirection: "row",
     // flexWrap: "wrap",
   },
 });

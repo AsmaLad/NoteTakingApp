@@ -33,7 +33,7 @@ export const Home = () => {
     }]}>
       <StatusBar style="auto" />
       <View>
-        <HomeHeader />
+        <HomeHeader dark={!isDarkMode}/>
       </View>
       <View style={styles.bodyContainer}>
         <Addnote navigation={navigation} />

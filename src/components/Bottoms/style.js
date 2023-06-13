@@ -1,5 +1,4 @@
 import { Dimensions, StyleSheet } from "react-native";
-import { colors } from "../../constants/colors";
 
 //DIMENSIONS
 const width = Dimensions.get("window").width;
@@ -14,10 +13,7 @@ export const styles = StyleSheet.create({
     alignItems: "flex-end",
     justifyContent: "flex-end",
     bottom: 0,
-    right: 0,
-    //   width: "45%",
-    //   margin: "1.5%",
-    //   height: width * 0.45,
+    right: 0
   },
   addIcon: {
     display: "flex",

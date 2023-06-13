@@ -1,57 +1,49 @@
 import React, { useEffect } from "react";
+import { useContext } from "react";
 
 //NAVIGATION
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer, DefaultTheme  } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
 //SCREENS
-import Home from "../screens/Home";
+import { Home } from "../screens/Home";
+import { NoteInfo } from "../screens/Note/index";
 
+//STYLE
+import { colors } from "../constants/colors";
+import { DarkModeContext } from "../constants/theme";
 
 const Stack = createStackNavigator();
 
 export const AppStack = () => {
+  const screenOptions = {
+    headerShown: false,
+  };
+  const { isDarkMode } = useContext(DarkModeContext);
+  const theme = {
+    ...DefaultTheme,
+    colors: {
+      ...DefaultTheme.colors,
+      background: isDarkMode ? colors.black : colors.onBackground,
+      text: isDarkMode ? colors.onBackground : colors.black,
+    },
+  };
 
   return (
-    // <Stack.Navigator
-    //   screenOptions={{
-    //     headerShown: false,
-    //     // contentStyle: styles.stackContainer,
-    //   }}
-    //   initialRouteName="HomeScreen
-    //   ">
-    //   <Stack.Screen name="HomeScreen" component={HomeScreen} />
-
-    // </Stack.Navigator>
-
-    <NavigationContainer>
+    <NavigationContainer theme={theme}>
       <Stack.Navigator screenOptions={screenOptions}>
         <Stack.Screen
           name="Home"
           component={Home}
-          // options={{
-          //   headerLeft: () => <LeftHeaderHome />,
-          //   headerRight: () => <RightHeaderHome />,
-          // }}
         />
-        {/* <Stack.Screen
+       <Stack.Screen
           name="NoteInfo"
           component={NoteInfo}
-          // options={({ navigation }) => ({
-          //   headerLeft: () => <LeftHeaderNoteInfo navigation={navigation} />,
-          //   headerRight: () => <Feather style={{marginRight:10}} name="save" size={24} color="black" />
-          //   ,
-          // })}
         />
-        <Stack.Screen
+        {/* <Stack.Screen
           name="EditNoteInfo"
           component={EditNoteInfo}
-          // options={({ navigation }) => ({
-          //   headerLeft: () => <LeftHeaderNoteInfo navigation={navigation} />,
-          //   headerRight: () => <Feather style={{marginRight:10}} name="save" size={24} color="black" />
-          //   ,
-          // })}
-        /> */}
+        />  */}
       </Stack.Navigator>
     </NavigationContainer>
   );
